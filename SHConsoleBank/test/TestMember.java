@@ -5,8 +5,11 @@ import java.util.List;
 import bank.member.Member;
 import bank.member.MemberDao;
 import bank.member.MemberListDao;
+import bank.member.MemberOracleDao;
 import bank.member.MemberService;
 import bank.member.SHMemberService;
+
+// --------------DELETE FROM sh_member; COMMIT; 이거 디벨로퍼에 치고오기----------------
 
 public class TestMember {
 	public static void main(String[] args) {
@@ -15,7 +18,8 @@ public class TestMember {
 	}
 	
 	public static void testMemberService() {
-		MemberService ms = new SHMemberService(new MemberListDao());
+//		MemberService ms = new SHMemberService(new MemberListDao());
+		MemberService ms = new SHMemberService(new MemberOracleDao());
 		
 		System.out.println(">> 회원가입 및 목록조회");
 		ms.join("curi", "1234", "큐리");
@@ -38,7 +42,9 @@ public class TestMember {
 	}
 	
 	public static void testMemberDao() {
-		MemberDao mdao = new MemberListDao();
+//		MemberDao mdao = new MemberListDao();
+		MemberDao mdao = new MemberOracleDao();
+		
 		// 회원 추가
 		System.out.println(">>> 회원 추가 및 회원 목록");
 		mdao.save(new Member("admin", "1234", "admin", null, null, Member.ADMIN));
