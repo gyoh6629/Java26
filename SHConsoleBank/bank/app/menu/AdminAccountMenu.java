@@ -8,7 +8,7 @@ public class AdminAccountMenu extends ConsoleMenu {
 
 	protected AdminAccountMenu(AccountService as, MemberService ms) {
 		super(as, ms);
-		menuList = new String[] {"", "", ""};
+		menuList = new String[] {"돌아가기", "계좌목록", "계좌삭제"};
 	}
 
 	@Override
@@ -26,15 +26,15 @@ public class AdminAccountMenu extends ConsoleMenu {
 	}
 
 	private void A() {
-		System.out.println(":::  :::");
+		System.out.println("::: 계좌목록 :::");
 	}
 
 	private void B() {
-		System.out.println(":::  :::");
+		System.out.println("::: 계좌삭제 :::");
 	}
 
 	private void C() {
-		System.out.println(":::  :::");
+		System.out.println("::: 돌아가기 :::");
 	}
 
 }

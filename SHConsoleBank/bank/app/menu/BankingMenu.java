@@ -8,12 +8,12 @@ public class BankingMenu extends ConsoleMenu {
 
 	protected BankingMenu(AccountService as, MemberService ms) {
 		super(as, ms);
-		menuList = new String[] {"", "", ""};
+		menuList = new String[] {"돌아가기", "입금", "출금"};
 	}
 
 	@Override
 	public void run() {
-		System.out.println(":::  :::");
+		System.out.println("::: 뱅킹 메뉴 :::");
 		while (true) {
 			int menu = selectMenu();
 			switch (menu) {
@@ -27,15 +27,15 @@ public class BankingMenu extends ConsoleMenu {
 	}
 
 	private void A() {
-		System.out.println(":::  :::");
+		System.out.println("::: 입금 :::");
 	}
 
 	private void B() {
-		System.out.println(":::  :::");
+		System.out.println("::: 출금 :::");
 	}
 
 	private void C() {
-		System.out.println(":::  :::");
+		System.out.println("::: 돌아가기 :::");
 	}
 
 }

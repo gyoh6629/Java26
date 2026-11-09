@@ -26,8 +26,7 @@ public class AdminMemberMenu extends ConsoleMenu {
 	}
 
 	private void A() {
-		System.out.println("::: 회원목록 :::");
-		
+		System.out.println("::: 회원목록 :::");	
 	}
 
 	private void B() {
