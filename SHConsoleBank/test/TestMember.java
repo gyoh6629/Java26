@@ -5,7 +5,7 @@ import java.util.List;
 import bank.member.Member;
 import bank.member.MemberDao;
 import bank.member.MemberListDao;
-import bank.member.MemberOracleDao;
+import bank.member.MemberMapDao;
 import bank.member.MemberService;
 import bank.member.SHMemberService;
 
@@ -13,13 +13,11 @@ import bank.member.SHMemberService;
 
 public class TestMember {
 	public static void main(String[] args) {
-//		testMemberDao();
-		testMemberService();
+		testMemberDao(new MemberListDao());
+		testMemberService(new SHMemberService(new MemberMapDao()));
 	}
 	
-	public static void testMemberService() {
-//		MemberService ms = new SHMemberService(new MemberListDao());
-		MemberService ms = new SHMemberService(new MemberOracleDao());
+	public static void testMemberService(MemberService ms) {
 		
 		System.out.println(">> 회원가입 및 목록조회");
 		ms.join("curi", "1234", "큐리");
@@ -41,9 +39,7 @@ public class TestMember {
 		printMemberList(ms.getAllMember());
 	}
 	
-	public static void testMemberDao() {
-//		MemberDao mdao = new MemberListDao();
-		MemberDao mdao = new MemberOracleDao();
+	public static void testMemberDao(MemberDao mdao) {
 		
 		// 회원 추가
 		System.out.println(">>> 회원 추가 및 회원 목록");
