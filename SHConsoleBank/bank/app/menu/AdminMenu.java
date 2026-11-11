@@ -8,7 +8,7 @@ public class AdminMenu extends ConsoleMenu {
 
 	protected AdminMenu(AccountService as, MemberService ms) {
 		super(as, ms);
-		menuList = new String[] {"로그아웃", "회원관리", "계좌관리"};
+		menuList = new String[] {"로그아웃", "회원 관리", "계좌 관리"};
 	}
 
 	@Override
@@ -26,11 +26,11 @@ public class AdminMenu extends ConsoleMenu {
 	}
 
 	private void manageMembers() {
-		System.out.println("::: 회원관리 :::");
+		System.out.println("::: 회원 관리 :::");
 	}
 
 	private void manageAccounts() {
-		System.out.println("::: 계좌관리 :::");
+		System.out.println("::: 계좌 관리 :::");
 	}
 
 	private void logout() {
