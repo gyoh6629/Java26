@@ -20,6 +20,7 @@ public class StartMenu extends ConsoleMenu {
 			case 1 -> login();
 			case 2 -> join();
 			case 0 -> {sayGoodbye(); return;}
+			case -1 -> {System.out.println("숫자를 입력하세요");}
 			default -> System.out.println("!! 메뉴에 있는 번호 선택 !!");
 			}
 		}

@@ -20,6 +20,7 @@ public class AdminMemberMenu extends ConsoleMenu {
 			case 1 -> A();
 			case 2 -> B();
 			case 0 -> {C(); return;}
+			case -1 -> {System.out.println("숫자를 입력하세요");}
 			default -> System.out.println("!! 메뉴에 있는 번호를 선택 !!");
 			}
 		}
